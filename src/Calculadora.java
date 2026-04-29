@@ -25,21 +25,424 @@ public class Calculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Igual = new javax.swing.JButton();
+        Limpar = new javax.swing.JButton();
+        Parenteses = new javax.swing.JButton();
+        Porcentagem = new javax.swing.JButton();
+        Divisão = new javax.swing.JButton();
+        Oito = new javax.swing.JButton();
+        Sete = new javax.swing.JButton();
+        Nove = new javax.swing.JButton();
+        Multi = new javax.swing.JButton();
+        Cinco = new javax.swing.JButton();
+        Quatro = new javax.swing.JButton();
+        Seis = new javax.swing.JButton();
+        Menos = new javax.swing.JButton();
+        Dois = new javax.swing.JButton();
+        Um = new javax.swing.JButton();
+        Tres = new javax.swing.JButton();
+        Mais = new javax.swing.JButton();
+        Voltar = new javax.swing.JButton();
+        Virgula = new javax.swing.JButton();
+        Zero = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Operandos = new javax.swing.JTextArea();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Igual.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Igual.setForeground(new java.awt.Color(0, 0, 0));
+        Igual.setText("=");
+        Igual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IgualActionPerformed(evt);
+            }
+        });
+
+        Limpar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Limpar.setForeground(new java.awt.Color(0, 0, 0));
+        Limpar.setText("CC");
+        Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LimparActionPerformed(evt);
+            }
+        });
+
+        Parenteses.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Parenteses.setForeground(new java.awt.Color(0, 0, 0));
+        Parenteses.setText("( )");
+        Parenteses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ParentesesActionPerformed(evt);
+            }
+        });
+
+        Porcentagem.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Porcentagem.setForeground(new java.awt.Color(0, 0, 0));
+        Porcentagem.setText("%");
+        Porcentagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PorcentagemActionPerformed(evt);
+            }
+        });
+
+        Divisão.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Divisão.setForeground(new java.awt.Color(0, 0, 0));
+        Divisão.setText("/");
+        Divisão.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DivisãoActionPerformed(evt);
+            }
+        });
+
+        Oito.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Oito.setForeground(new java.awt.Color(0, 0, 0));
+        Oito.setText("8");
+        Oito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OitoActionPerformed(evt);
+            }
+        });
+
+        Sete.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Sete.setForeground(new java.awt.Color(0, 0, 0));
+        Sete.setText("7");
+        Sete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeteActionPerformed(evt);
+            }
+        });
+
+        Nove.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Nove.setForeground(new java.awt.Color(0, 0, 0));
+        Nove.setText("9");
+        Nove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoveActionPerformed(evt);
+            }
+        });
+
+        Multi.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Multi.setForeground(new java.awt.Color(0, 0, 0));
+        Multi.setText("X");
+        Multi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MultiActionPerformed(evt);
+            }
+        });
+
+        Cinco.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Cinco.setForeground(new java.awt.Color(0, 0, 0));
+        Cinco.setText("5");
+        Cinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CincoActionPerformed(evt);
+            }
+        });
+
+        Quatro.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Quatro.setForeground(new java.awt.Color(0, 0, 0));
+        Quatro.setText("4");
+        Quatro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                QuatroActionPerformed(evt);
+            }
+        });
+
+        Seis.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Seis.setForeground(new java.awt.Color(0, 0, 0));
+        Seis.setText("6");
+        Seis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SeisActionPerformed(evt);
+            }
+        });
+
+        Menos.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Menos.setForeground(new java.awt.Color(0, 0, 0));
+        Menos.setText("-");
+        Menos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenosActionPerformed(evt);
+            }
+        });
+
+        Dois.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Dois.setForeground(new java.awt.Color(0, 0, 0));
+        Dois.setText("2");
+        Dois.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoisActionPerformed(evt);
+            }
+        });
+
+        Um.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Um.setForeground(new java.awt.Color(0, 0, 0));
+        Um.setText("1");
+        Um.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UmActionPerformed(evt);
+            }
+        });
+
+        Tres.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Tres.setForeground(new java.awt.Color(0, 0, 0));
+        Tres.setText("3");
+        Tres.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TresActionPerformed(evt);
+            }
+        });
+
+        Mais.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Mais.setForeground(new java.awt.Color(0, 0, 0));
+        Mais.setText("+");
+        Mais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MaisActionPerformed(evt);
+            }
+        });
+
+        Voltar.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Voltar.setForeground(new java.awt.Color(0, 0, 0));
+        Voltar.setText("<-");
+        Voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VoltarActionPerformed(evt);
+            }
+        });
+
+        Virgula.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Virgula.setForeground(new java.awt.Color(0, 0, 0));
+        Virgula.setText(",");
+        Virgula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VirgulaActionPerformed(evt);
+            }
+        });
+
+        Zero.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        Zero.setForeground(new java.awt.Color(0, 0, 0));
+        Zero.setText("0");
+        Zero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ZeroActionPerformed(evt);
+            }
+        });
+
+        Operandos.setColumns(20);
+        Operandos.setRows(5);
+        jScrollPane1.setViewportView(Operandos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(441, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Sete, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addGap(17, 17, 17)
+                                    .addComponent(Oito, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Nove, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Multi, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Parenteses, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(Divisão, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(Quatro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Cinco, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Seis, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Menos, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Zero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Virgula, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Igual, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Um, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Dois, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Tres, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(Mais, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1))
+                .addGap(432, 432, 432))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Parenteses, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Divisão, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Sete, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Oito, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Nove, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Multi, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Quatro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Cinco, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Seis, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Menos, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Um, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Dois, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Tres, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Mais, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Zero, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Virgula, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(583, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimparActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText("");
+    }//GEN-LAST:event_LimparActionPerformed
+
+    private void IgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IgualActionPerformed
+        String expressao = Operandos.getText();
+        
+
+        try{
+            javax.script.ScriptEngine engine = new javax.script.ScriptEngineManager().getEngineByName("JavaScript");
+            Object resultado = engine.eval(expressao);
+            Operandos.setText(resultado.toString());         
+        }
+        catch(Exception e){
+            Operandos.setText("");
+        }
+        
+    }//GEN-LAST:event_IgualActionPerformed
+
+    private void MaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaisActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "*");
+    }//GEN-LAST:event_MaisActionPerformed
+
+    private void MenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "-");
+    }//GEN-LAST:event_MenosActionPerformed
+
+    private void MultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "x");
+    }//GEN-LAST:event_MultiActionPerformed
+
+    private void DivisãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisãoActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "/");
+    }//GEN-LAST:event_DivisãoActionPerformed
+
+    private void PorcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PorcentagemActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "%");
+    }//GEN-LAST:event_PorcentagemActionPerformed
+
+    private void VirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VirgulaActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + ",");
+    }//GEN-LAST:event_VirgulaActionPerformed
+
+    private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_VoltarActionPerformed
+
+    private void ParentesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParentesesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ParentesesActionPerformed
+
+    private void ZeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZeroActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "0");
+    }//GEN-LAST:event_ZeroActionPerformed
+
+    private void UmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UmActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "1");
+    }//GEN-LAST:event_UmActionPerformed
+
+    private void DoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoisActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "2");
+    }//GEN-LAST:event_DoisActionPerformed
+
+    private void TresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TresActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "3");
+    }//GEN-LAST:event_TresActionPerformed
+
+    private void QuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuatroActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "4");
+    }//GEN-LAST:event_QuatroActionPerformed
+
+    private void CincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CincoActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "5");
+    }//GEN-LAST:event_CincoActionPerformed
+
+    private void SeisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeisActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "6");
+    }//GEN-LAST:event_SeisActionPerformed
+
+    private void SeteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SeteActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "7");
+    }//GEN-LAST:event_SeteActionPerformed
+
+    private void OitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OitoActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "8");
+    }//GEN-LAST:event_OitoActionPerformed
+
+    private void NoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoveActionPerformed
+        // TODO add your handling code here:
+        Operandos.setText(Operandos.getText() + "9");
+    }//GEN-LAST:event_NoveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +480,27 @@ public class Calculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cinco;
+    private javax.swing.JButton Divisão;
+    private javax.swing.JButton Dois;
+    private javax.swing.JButton Igual;
+    private javax.swing.JButton Limpar;
+    private javax.swing.JButton Mais;
+    private javax.swing.JButton Menos;
+    private javax.swing.JButton Multi;
+    private javax.swing.JButton Nove;
+    private javax.swing.JButton Oito;
+    private javax.swing.JTextArea Operandos;
+    private javax.swing.JButton Parenteses;
+    private javax.swing.JButton Porcentagem;
+    private javax.swing.JButton Quatro;
+    private javax.swing.JButton Seis;
+    private javax.swing.JButton Sete;
+    private javax.swing.JButton Tres;
+    private javax.swing.JButton Um;
+    private javax.swing.JButton Virgula;
+    private javax.swing.JButton Voltar;
+    private javax.swing.JButton Zero;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
