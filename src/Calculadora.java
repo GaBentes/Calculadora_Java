@@ -231,6 +231,7 @@ public class Calculadora extends javax.swing.JFrame {
         });
 
         Operandos.setColumns(20);
+        Operandos.setFont(new java.awt.Font("sansserif", 0, 24)); // NOI18N
         Operandos.setRows(5);
         jScrollPane1.setViewportView(Operandos);
 
@@ -238,9 +239,9 @@ public class Calculadora extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(441, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +270,8 @@ public class Calculadora extends javax.swing.JFrame {
                             .addComponent(Seis, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(Menos, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(1, 1, 1)))
+                            .addGap(1, 1, 1))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(Zero, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -286,15 +288,14 @@ public class Calculadora extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addComponent(Tres, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(Mais, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1))
-                .addGap(432, 432, 432))
+                            .addComponent(Mais, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Parenteses, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -329,8 +330,8 @@ public class Calculadora extends javax.swing.JFrame {
                             .addComponent(Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(Igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(583, Short.MAX_VALUE))
+                        .addComponent(Igual, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
@@ -342,23 +343,47 @@ public class Calculadora extends javax.swing.JFrame {
     }//GEN-LAST:event_LimparActionPerformed
 
     private void IgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IgualActionPerformed
-        String expressao = Operandos.getText();
-        
+        try {
+            String expressao = Operandos.getText().replace(",", "."); // Garante ponto decimal
+            double resultado = 0;
 
-        try{
-            javax.script.ScriptEngine engine = new javax.script.ScriptEngineManager().getEngineByName("JavaScript");
-            Object resultado = engine.eval(expressao);
-            Operandos.setText(resultado.toString());         
+            // Verifica qual operador está na String
+            if (expressao.contains("+")) {
+                String[] partes = expressao.split("\\+"); // O \\ serve para escapar o sinal de +
+                resultado = Double.parseDouble(partes[0]) + Double.parseDouble(partes[1]);
+            } else if (expressao.contains("-")) {
+                // Usamos um split especial caso o primeiro número seja negativo
+                String[] partes = expressao.split("-");
+                resultado = Double.parseDouble(partes[0]) - Double.parseDouble(partes[1]);
+            } else if (expressao.contains("*")) {
+                String[] partes = expressao.split("\\*");
+                resultado = Double.parseDouble(partes[0]) * Double.parseDouble(partes[1]);
+            } else if (expressao.contains("/")) {
+                String[] partes = expressao.split("/");
+                if (Double.parseDouble(partes[1]) != 0) {
+                    resultado = Double.parseDouble(partes[0]) / Double.parseDouble(partes[1]);
+                } else {
+                    Operandos.setText("Erro: Div/0");
+                    return;
+                }
+            }
+            if (resultado % 1 == 0) {
+                // Se o número for inteiro (ex: 2.0), remove o .0 convertendo para long
+                Operandos.setText(String.valueOf((long) resultado));
+            } else {
+                // Se tiver casas decimais (ex: 2.5), mostra normal e troca ponto por vírgula
+                Operandos.setText(String.valueOf(resultado).replace(".", ","));
+            }
+            iniciouNovaConta = true;
+        } catch (Exception e) {
+            System.out.println("");
         }
-        catch(Exception e){
-            Operandos.setText("");
-        }
-        
     }//GEN-LAST:event_IgualActionPerformed
 
     private void MaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaisActionPerformed
         // TODO add your handling code here:
-        Operandos.setText(Operandos.getText() + "*");
+        iniciouNovaConta = false;
+        Operandos.setText(Operandos.getText() + "+");
     }//GEN-LAST:event_MaisActionPerformed
 
     private void MenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenosActionPerformed
@@ -368,7 +393,7 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void MultiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiActionPerformed
         // TODO add your handling code here:
-        Operandos.setText(Operandos.getText() + "x");
+        Operandos.setText(Operandos.getText() + "*");
     }//GEN-LAST:event_MultiActionPerformed
 
     private void DivisãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DivisãoActionPerformed
@@ -388,6 +413,11 @@ public class Calculadora extends javax.swing.JFrame {
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
         // TODO add your handling code here:
+        String textoAtual = Operandos.getText();
+        if (textoAtual.length() > 0) {
+            // Remove apenas o último caractere
+            Operandos.setText(textoAtual.substring(0, textoAtual.length() - 1));
+        }
     }//GEN-LAST:event_VoltarActionPerformed
 
     private void ParentesesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ParentesesActionPerformed
@@ -402,11 +432,13 @@ public class Calculadora extends javax.swing.JFrame {
     private void UmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UmActionPerformed
         // TODO add your handling code here:
         Operandos.setText(Operandos.getText() + "1");
+        iniciouNovaConta = false;
     }//GEN-LAST:event_UmActionPerformed
 
     private void DoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoisActionPerformed
         // TODO add your handling code here:
         Operandos.setText(Operandos.getText() + "2");
+        iniciouNovaConta = false;
     }//GEN-LAST:event_DoisActionPerformed
 
     private void TresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TresActionPerformed
@@ -479,6 +511,7 @@ public class Calculadora extends javax.swing.JFrame {
         });
     }
 
+    private boolean iniciouNovaConta = false;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cinco;
     private javax.swing.JButton Divisão;
